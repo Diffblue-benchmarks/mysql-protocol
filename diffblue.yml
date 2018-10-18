@@ -18,8 +18,10 @@ phases:
     max-nondet-array-length: 20
     unwind: 2
 -
-  timeout: 300
+  timeout: 500
   cbmcArguments:
-    max-nondet-array-length: 30
-    max-nondet-string-length: 10
-    unwind: 3
+    max-nondet-array-length: 10
+    max-nondet-string-length: 5
+    unwind: 5
+    string-printable: true
+    java-assume-inputs-not-null: true;
