@@ -21,7 +21,7 @@ phases:
     string-printable: true
     string-non-empty: true
     java-assume-inputs-non-null: true
-    depth: 100 
+    depth: 5
 -
   timeout: 500
   cbmcArguments:
@@ -30,4 +30,5 @@ phases:
     unwind: 5
     string-printable: true
     string-non-empty: true
-    depth: 5
+    depth: 50
+    java-max-vla-length: 150  
