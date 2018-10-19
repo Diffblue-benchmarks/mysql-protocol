@@ -20,7 +20,7 @@ phases:
     max-nondet-string-length: 30
     string-printable: true
     string-non-empty: true
-    java-input-non-null: true
+    java-assume-inputs-non-null: true
 -
   timeout: 500
   cbmcArguments:
