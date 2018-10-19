@@ -26,6 +26,6 @@ phases:
   cbmcArguments:
     max-nondet-array-length: 3
     unwind: 1
-    depth: 50
+    depth: 150
     java-max-vla-length: 150
     throw-runtime-exceptions: true
