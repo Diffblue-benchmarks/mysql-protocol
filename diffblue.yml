@@ -5,6 +5,12 @@ cbmcArguments:
   depth: false
   slice-function-calls: org\.slf4j\.Logger.*
   java-external-code-action: 'mock'
+units:
+- target:
+  - dir: target/classes
+    file: com/seaboat/mysql/protocol/constant/ColumnType.class
+    sourceDir: src/main/java
+    sourceFile: com/seaboat/mysql/protocol/constant/ColumnType.java
 phases:
 -
   timeout: 60
