@@ -1,13 +1,13 @@
 cbmcArguments:
   classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
   depth: false
-  java-assume-inputs-non-null: true
-  java-generate-no-comments: true
   string-non-empty: true
 phases:
 -
   timeout: 120
   cbmcArguments:
+    java-assume-inputs-non-null: true
+    java-generate-no-comments: true
     max-nondet-array-length: 10
     unwind: 1
 -
