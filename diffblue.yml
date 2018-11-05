@@ -1,6 +1,5 @@
 cbmcArguments:
   classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
-  cover-function-only: false
   depth: false
   java-assume-inputs-non-null: true
   java-generate-no-comments: true
