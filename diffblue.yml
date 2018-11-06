@@ -21,4 +21,4 @@ phases:
     java-external-code-action: mock
     max-nondet-array-length: 30
     max-nondet-string-length: 10
-    unwind: 3
+    unwind: 20
