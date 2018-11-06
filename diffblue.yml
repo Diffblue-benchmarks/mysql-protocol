@@ -20,4 +20,5 @@ phases:
   timeout: 360
   cbmcArguments:
     max-nondet-array-length: 30
+    max-nondet-string-length: 10
     unwind: 3
