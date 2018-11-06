@@ -1,12 +1,13 @@
 cbmcArguments:
   classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
   depth: false
+  java-external-code-action: mock
+  java-generate-no-comments: true
 phases:
 -
   timeout: 120
   cbmcArguments:
     java-assume-inputs-non-null: true
-    java-generate-no-comments: true
     max-nondet-array-length: 10
     string-non-empty: true
     unwind: 1
@@ -18,7 +19,5 @@ phases:
 -
   timeout: 360
   cbmcArguments:
-    java-external-code-action: mock
     max-nondet-array-length: 30
-    max-nondet-string-length: 10
-    unwind: 20
+    unwind: 3
