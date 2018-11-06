@@ -1,7 +1,6 @@
 cbmcArguments:
   classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
   depth: false
-  string-non-empty: true
 phases:
 -
   timeout: 120
@@ -9,6 +8,7 @@ phases:
     java-assume-inputs-non-null: true
     java-generate-no-comments: true
     max-nondet-array-length: 10
+    string-non-empty: true
     unwind: 1
 -
   timeout: 240
