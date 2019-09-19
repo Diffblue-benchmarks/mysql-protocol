@@ -8,7 +8,6 @@ import static org.mockito.Matchers.isNull;
 import com.diffblue.deeptestutils.Reflector;
 import com.diffblue.deeptestutils.mock.DTUMemberMatcher;
 import com.seaboat.mysql.protocol.util.BufferUtil;
-import java.util.Random;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -555,8 +554,6 @@ public class BufferUtilTest {
 
     // Arrange - needs array of length >=251
     byte[] src = new byte[251];
-    Random random = new Random();
-    random.nextBytes(src);
 
     // Act and Assert result
     Assert.assertEquals(254, BufferUtil.getLength(src));
@@ -568,8 +565,6 @@ public class BufferUtilTest {
 
     // Arrange - needs array of length >= 0x10000L (65536)
     byte[] src = new byte[65536];
-    Random random = new Random();
-    random.nextBytes(src);
 
     // Act and Assert result
     Assert.assertEquals(65540, BufferUtil.getLength(src));
@@ -581,8 +576,6 @@ public class BufferUtilTest {
 
     // Arrange - needs array of length >= 0x1000000L (16777216)
     byte[] src = new byte[16777216];
-    Random random = new Random();
-    random.nextBytes(src);
 
     // Act and Assert result
     Assert.assertEquals(16777225, BufferUtil.getLength(src));
