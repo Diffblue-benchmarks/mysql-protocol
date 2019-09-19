@@ -8,6 +8,7 @@ import static org.mockito.Matchers.isNull;
 import com.diffblue.deeptestutils.Reflector;
 import com.diffblue.deeptestutils.mock.DTUMemberMatcher;
 import com.seaboat.mysql.protocol.util.BufferUtil;
+import java.util.Random;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -525,6 +526,7 @@ public class BufferUtilTest {
     Assert.assertEquals(9, BufferUtil.getLength(16_777_216L));
   }
 
+  // Perfect
   // Test written by Diffblue Cover.
   @Test
   public void getLengthInput0OutputPositive00083688741e808c5c4() {
@@ -534,5 +536,55 @@ public class BufferUtilTest {
 
     // Act and Assert result
     Assert.assertEquals(1, BufferUtil.getLength(src));
+  }
+
+  // Test written by hand.
+  @Test
+  public void getLength1() {
+
+    // Arrange
+    final byte[] src = {1};
+
+    // Act and Assert result
+    Assert.assertEquals(2, BufferUtil.getLength(src));
+  }
+
+  // Test written by hand.
+  @Test
+  public void getLength2() {
+
+    // Arrange - needs array of length >=251
+    byte[] src = new byte[251];
+    Random random = new Random();
+    random.nextBytes(src);
+
+    // Act and Assert result
+    Assert.assertEquals(254, BufferUtil.getLength(src));
+  }
+
+  // Test written by hand.
+  @Test
+  public void getLength3() {
+
+    // Arrange - needs array of length >= 0x10000L (65536)
+    byte[] src = new byte[65536];
+    Random random = new Random();
+    random.nextBytes(src);
+
+    // Act and Assert result
+    Assert.assertEquals(65540, BufferUtil.getLength(src));
+  }
+
+  // Test written by hand.
+  @Test
+  public void getLength4() {
+
+    // Arrange - needs array of length >= 0x1000000L (16777216)
+    byte[] src = new byte[16777216];
+    Random random = new Random();
+    random.nextBytes(src);
+
+    // Act and Assert result
+    Assert.assertEquals(16777225, BufferUtil.getLength(src));
   }
 }
