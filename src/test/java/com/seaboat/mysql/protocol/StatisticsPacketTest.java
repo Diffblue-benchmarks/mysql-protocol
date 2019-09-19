@@ -102,12 +102,22 @@ public class StatisticsPacketTest {
 
     // Arrange
     final StatisticsPacket statisticsPacket = new StatisticsPacket();
-    ByteBuffer buffer = ByteBuffer.allocate(10);
+    ByteBuffer buffer = ByteBuffer.allocate(5);
 
     // Act
     statisticsPacket.write(buffer);
 
     // The method returns void, testing that no exception is thrown
+    // Test side-effects
+    byte[] arr = {
+        (byte) (1 & 0xff),
+        (byte) (1 >>> 8),
+        (byte) (1 >>> 16),
+        statisticsPacket.packetId,
+        MysqlPacket.COM_STATISTICS};
+    ByteBuffer otherBuffer = ByteBuffer.wrap(arr);
+    otherBuffer.position(5);
+    Assert.assertEquals(otherBuffer, buffer);
   }
 
   // Test written by hand
