@@ -30,6 +30,9 @@ import java.nio.ByteBuffer;
 @RunWith(PowerMockRunner.class)
 public class AuthPacketTest {
 
+  @Rule
+  public final ExpectedException thrown = ExpectedException.none();
+
   // Test written by Diffblue Cover.
   @Test
   public void calcPacketSizeOutputPositive00028139384e5291dcd() {

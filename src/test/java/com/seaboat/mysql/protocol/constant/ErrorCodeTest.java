@@ -13,6 +13,9 @@ import java.lang.reflect.InvocationTargetException;
 
 public class ErrorCodeTest {
 
+  @Rule
+  public final ExpectedException thrown = ExpectedException.none();
+
   // Test written by Diffblue Cover.
 
   @Test

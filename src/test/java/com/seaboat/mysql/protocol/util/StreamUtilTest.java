@@ -17,6 +17,9 @@ import java.lang.reflect.InvocationTargetException;
 
 public class StreamUtilTest {
 
+  @Rule
+  public final ExpectedException thrown = ExpectedException.none();
+
   // Test written by Diffblue Cover.
   @Test
   public void constructorOutputNotNull() {

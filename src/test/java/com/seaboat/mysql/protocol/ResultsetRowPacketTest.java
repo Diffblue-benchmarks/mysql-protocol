@@ -31,6 +31,9 @@ import java.util.ArrayList;
 @RunWith(PowerMockRunner.class)
 public class ResultsetRowPacketTest {
 
+  @Rule
+  public final ExpectedException thrown = ExpectedException.none();
+
   // Test written by Diffblue Cover.
   @Test
   public void readInput7OutputVoid() {

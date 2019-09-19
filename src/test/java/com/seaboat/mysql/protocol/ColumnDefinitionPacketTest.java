@@ -30,6 +30,9 @@ import java.nio.ByteBuffer;
 @RunWith(PowerMockRunner.class)
 public class ColumnDefinitionPacketTest {
 
+  @Rule
+  public final ExpectedException thrown = ExpectedException.none();
+
   // Test written by Diffblue Cover.
   @PrepareForTest({ColumnDefinitionPacket.class, System.class})
   @Test

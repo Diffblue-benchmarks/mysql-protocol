@@ -33,6 +33,9 @@ import java.util.TimeZone;
 @RunWith(PowerMockRunner.class)
 public class MysqlMessageTest {
 
+  @Rule
+  public final ExpectedException thrown = ExpectedException.none();
+
   // Test written by Diffblue Cover.
   @PrepareForTest(MysqlMessage.class)
   @Test
