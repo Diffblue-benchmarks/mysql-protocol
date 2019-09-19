@@ -6,6 +6,7 @@ import com.diffblue.deeptestutils.Reflector;
 import com.diffblue.deeptestutils.mock.DTUMemberMatcher;
 import com.seaboat.mysql.protocol.StatisticsPacket;
 import com.seaboat.mysql.protocol.util.BufferUtil;
+import java.nio.BufferOverflowException;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -23,6 +24,9 @@ import java.nio.ByteBuffer;
 
 @RunWith(PowerMockRunner.class)
 public class StatisticsPacketTest {
+
+  @Rule
+  public final ExpectedException thrown = ExpectedException.none();
 
   // Test written by Diffblue Cover.
   @Test
@@ -60,6 +64,7 @@ public class StatisticsPacketTest {
     // The method returns void, testing that no exception is thrown
   }
 
+  // Bad - mocking
   // Test written by Diffblue Cover.
   @PrepareForTest({StatisticsPacket.class, BufferUtil.class, ByteBuffer.class})
   @Test
@@ -89,5 +94,34 @@ public class StatisticsPacketTest {
     statisticsPacket.write(buffer);
 
     // The method returns void, testing that no exception is thrown
+  }
+
+  // Test written by hand
+  @Test
+  public void write1() throws Exception, InvocationTargetException {
+
+    // Arrange
+    final StatisticsPacket statisticsPacket = new StatisticsPacket();
+    ByteBuffer buffer = ByteBuffer.allocate(10);
+
+    // Act
+    statisticsPacket.write(buffer);
+
+    // The method returns void, testing that no exception is thrown
+  }
+
+  // Test written by hand
+  @Test
+  public void write2() throws Exception, InvocationTargetException {
+
+    // Arrange
+    final StatisticsPacket statisticsPacket = new StatisticsPacket();
+    ByteBuffer buffer = ByteBuffer.allocate(1);
+
+    // Act
+    thrown.expect(BufferOverflowException.class);
+    statisticsPacket.write(buffer);
+
+    // The method is not expected to return due to exception thrown
   }
 }
