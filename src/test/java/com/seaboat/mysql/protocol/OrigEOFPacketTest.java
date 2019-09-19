@@ -17,7 +17,7 @@ import com.seaboat.mysql.protocol.util.HexUtil;
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
  * @version 1.0
  */
-public class EOFPacketTest {
+public class OrigEOFPacketTest {
 	@Test
 	public void produce() {
 		EOFPacket eof = new EOFPacket();

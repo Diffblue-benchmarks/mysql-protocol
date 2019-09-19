@@ -19,7 +19,7 @@ import com.seaboat.mysql.protocol.util.HexUtil;
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
  * @version 1.0
  */
-public class ResultsetRowPacketTest {
+public class OrigResultsetRowPacketTest {
 	@Test
 	public void produce() {
 		ResultsetRowPacket resultsetRow = new ResultsetRowPacket(6);

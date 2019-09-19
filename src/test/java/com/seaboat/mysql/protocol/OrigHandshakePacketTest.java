@@ -22,7 +22,7 @@ import com.seaboat.mysql.protocol.util.RandomUtil;
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
  * @version 1.0
  */
-public class HandshakePacketTest {
+public class OrigHandshakePacketTest {
 
 	@Test
 	public void produce() {

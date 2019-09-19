@@ -21,7 +21,7 @@ import com.seaboat.mysql.protocol.util.SecurityUtil;
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
  * @version 1.0
  */
-public class AuthPacketTest {
+public class OrigAuthPacketTest {
 	@Test
 	public void produce() {
 		// handshake packet's rand1 and rand2

@@ -17,7 +17,7 @@ import com.seaboat.mysql.protocol.util.HexUtil;
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
  * @version 1.0
  */
-public class ColumnCountPacketTest {
+public class OrigColumnCountPacketTest {
 	@Test
 	public void produce() {
 		ColumnCountPacket columnCount = new ColumnCountPacket();

@@ -16,7 +16,7 @@ import com.seaboat.mysql.protocol.util.HexUtil;
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
  * @version 1.0
  */
-public class ShutdownPacketTest {
+public class OrigShutdownPacketTest {
 	@Test
 	public void produce() {
 		ShutdownPacket shutdown = new ShutdownPacket();
