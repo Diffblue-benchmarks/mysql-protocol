@@ -481,6 +481,7 @@ public class BufferUtilTest {
     // The method returns void, testing that no exception is thrown
   }
 
+  // Perfect
   // Test written by Diffblue Cover.
   @Test
   public void getLengthInputZeroOutputPositive() {
@@ -489,6 +490,15 @@ public class BufferUtilTest {
     Assert.assertEquals(1, BufferUtil.getLength(0L));
   }
 
+  // Test written by hand.
+  @Test
+  public void getLengthInputNonZeroOutputPositive() {
+
+    // Act and Assert result
+    Assert.assertEquals(1, BufferUtil.getLength(1L));
+  }
+
+  // Perfect
   // Test written by Diffblue Cover.
   @Test
   public void getLengthInputPositiveOutputPositive() {
@@ -497,6 +507,7 @@ public class BufferUtilTest {
     Assert.assertEquals(3, BufferUtil.getLength(252L));
   }
 
+  // Perfect
   // Test written by Diffblue Cover.
   @Test
   public void getLengthInputPositiveOutputPositive2() {
@@ -505,6 +516,7 @@ public class BufferUtilTest {
     Assert.assertEquals(4, BufferUtil.getLength(65_536L));
   }
 
+  // Perfect
   // Test written by Diffblue Cover.
   @Test
   public void getLengthInputPositiveOutputPositive3() {
