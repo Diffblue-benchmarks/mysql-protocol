@@ -7653,35 +7653,36 @@ public class MysqlMessageTest {
     Assert.assertNull(mysqlMessage.readStringWithLength(null));
   }
 
-  // Test written by Diffblue Cover.
-  @PrepareForTest({MysqlMessage.class, System.class})
-  @Test
-  public void readBytesWithLengthOutput13() throws Exception, InvocationTargetException {
-
-    // Setup mocks
-    PowerMockito.mockStatic(System.class);
-
-    // Arrange
-    final MysqlMessage mysqlMessage =
-        (MysqlMessage)Reflector.getInstance("com.seaboat.mysql.protocol.MysqlMessage");
-    Reflector.setField(mysqlMessage, "length", 0);
-    final byte[] myByteArray = {(byte)-2, (byte)13,  (byte)8,    (byte)0,  (byte)0,   (byte)-1,
-                                (byte)-2, (byte)13,  (byte)0,    (byte)0,  (byte)0,   (byte)-1,
-                                (byte)-1, (byte)-67, (byte)-68,  (byte)0,  (byte)-17, (byte)16,
-                                (byte)28, (byte)28,  (byte)-116, (byte)12, (byte)12,  (byte)-51,
-                                (byte)0,  (byte)0,   (byte)0,    (byte)0};
-    Reflector.setField(mysqlMessage, "data", myByteArray);
-    Reflector.setField(mysqlMessage, "position", 6);
-
-    // Act
-    final byte[] actual = mysqlMessage.readBytesWithLength();
-
-    // Assert result
-    Assert.assertArrayEquals(new byte[] {(byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0,
-                                         (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0,
-                                         (byte)0},
-                             actual);
-  }
+  // Compilation error: method readBytesWithLengthOutput13() is already defined in class com.seaboat.mysql.protocol.MysqlMessageTest
+//  // Test written by Diffblue Cover.
+//  @PrepareForTest({MysqlMessage.class, System.class})
+//  @Test
+//  public void readBytesWithLengthOutput13() throws Exception, InvocationTargetException {
+//
+//    // Setup mocks
+//    PowerMockito.mockStatic(System.class);
+//
+//    // Arrange
+//    final MysqlMessage mysqlMessage =
+//        (MysqlMessage)Reflector.getInstance("com.seaboat.mysql.protocol.MysqlMessage");
+//    Reflector.setField(mysqlMessage, "length", 0);
+//    final byte[] myByteArray = {(byte)-2, (byte)13,  (byte)8,    (byte)0,  (byte)0,   (byte)-1,
+//                                (byte)-2, (byte)13,  (byte)0,    (byte)0,  (byte)0,   (byte)-1,
+//                                (byte)-1, (byte)-67, (byte)-68,  (byte)0,  (byte)-17, (byte)16,
+//                                (byte)28, (byte)28,  (byte)-116, (byte)12, (byte)12,  (byte)-51,
+//                                (byte)0,  (byte)0,   (byte)0,    (byte)0};
+//    Reflector.setField(mysqlMessage, "data", myByteArray);
+//    Reflector.setField(mysqlMessage, "position", 6);
+//
+//    // Act
+//    final byte[] actual = mysqlMessage.readBytesWithLength();
+//
+//    // Assert result
+//    Assert.assertArrayEquals(new byte[] {(byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0,
+//                                         (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0,
+//                                         (byte)0},
+//                             actual);
+//  }
 
   // Test written by Diffblue Cover.
   @PrepareForTest({MysqlMessage.class, System.class})

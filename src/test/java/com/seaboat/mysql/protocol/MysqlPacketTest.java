@@ -14,18 +14,19 @@ import org.powermock.modules.junit4.PowerMockRunner;
 @RunWith(PowerMockRunner.class)
 public class MysqlPacketTest {
 
-  // Test written by Diffblue Cover.
-  @Test
-  public void constructorOutputNotNull() {
-
-    // Act, creating object to test constructor
-    final MysqlPacket actual = new MysqlPacket();
-
-    // Assert result
-    Assert.assertNotNull(actual);
-    Assert.assertEquals((byte)0, actual.packetId);
-    Assert.assertEquals(0, actual.packetLength);
-  }
+  // Compilation error: com.seaboat.mysql.protocol.MysqlPacket is abstract; cannot be instantiated
+//  // Test written by Diffblue Cover.
+//  @Test
+//  public void constructorOutputNotNull() {
+//
+//    // Act, creating object to test constructor
+//    final MysqlPacket actual = new MysqlPacket();
+//
+//    // Assert result
+//    Assert.assertNotNull(actual);
+//    Assert.assertEquals((byte)0, actual.packetId);
+//    Assert.assertEquals(0, actual.packetLength);
+//  }
 
   // Test written by Diffblue Cover.
   @PrepareForTest(MysqlPacket.class)
