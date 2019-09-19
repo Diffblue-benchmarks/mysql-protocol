@@ -57,6 +57,19 @@ public class BufferUtilTest {
     // The method returns void, testing that no exception is thrown
   }
 
+  // Test written manually
+  @Test
+  public void testWriteUB2() throws UnsupportedOperationException {
+
+    // Arrange
+    final ByteBuffer buffer = ByteBuffer.allocateDirect(2);
+    // Act
+    BufferUtil.writeUB2(buffer, 0xabcd);
+    // Check
+    assert(buffer.get(0) == (byte) 0xcd);
+    assert(buffer.get(1) == (byte) 0xab);
+  }
+
   // Test written by Diffblue Cover.
   @PrepareForTest({BufferUtil.class, ByteBuffer.class})
   @Test
