@@ -28,12 +28,7 @@ public class PerfectStatisticsPacketTest {
     statisticsPacket.write(buffer);
 
     // Test side-effects
-    byte[] arr = {
-        (byte) (1 & 0xff),
-        (byte) (1 >>> 8),
-        (byte) (1 >>> 16),
-        statisticsPacket.packetId,
-        MysqlPacket.COM_STATISTICS};
+    byte[] arr = {1, 0, 0, 0, MysqlPacket.COM_STATISTICS};
     ByteBuffer otherBuffer = ByteBuffer.wrap(arr);
     otherBuffer.position(5);
     Assert.assertEquals(otherBuffer, buffer);
@@ -45,7 +40,7 @@ public class PerfectStatisticsPacketTest {
 
     // Arrange
     final StatisticsPacket statisticsPacket = new StatisticsPacket();
-    ByteBuffer buffer = ByteBuffer.allocate(1);
+    ByteBuffer buffer = ByteBuffer.allocate(4); // buffer to write in must have capacity at least 5
 
     // Act
     thrown.expect(BufferOverflowException.class);
