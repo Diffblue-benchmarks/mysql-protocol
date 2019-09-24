@@ -18,6 +18,36 @@ public class PerfectStatisticsPacketTest {
 
   // Test written by hand
   @Test
+  public void read1() {
+
+    // Arrange
+    final StatisticsPacket statisticsPacket = new StatisticsPacket();
+    final byte[] data = {2, 4, 3, 1, 7, 3, 56, 127};
+
+    // Act
+    statisticsPacket.read(data);
+
+    // Test side-effects
+    Assert.assertEquals(data[0] + data[1]*256 + data[2]*65536, statisticsPacket.packetLength);
+    Assert.assertEquals(data[3], statisticsPacket.packetId);
+    Assert.assertEquals(data[4], statisticsPacket.payload);
+  }
+
+  // Test written by hand
+  @Test
+  public void read2() {
+
+    // Arrange
+    final StatisticsPacket statisticsPacket = new StatisticsPacket();
+    final byte[] data = {2, 4, 3, 1}; // array must have at least 5 elements
+
+    // Act
+    thrown.expect(ArrayIndexOutOfBoundsException.class);
+    statisticsPacket.read(data);
+  }
+
+  // Test written by hand
+  @Test
   public void write1() throws Exception, InvocationTargetException {
 
     // Arrange
